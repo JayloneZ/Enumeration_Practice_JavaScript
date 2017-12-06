@@ -59,10 +59,12 @@ var arrayTasks = {
 		}
 	},
 
-	// sumOfAllEvenNumbersSquared: function (arr) {
-
-	// }
-
+	sumOfAllEvenNumbersSquared: function (arr) {
+		let arrEvens = arr.filter(item => item % 2 === 0);
+		let arrEvensSquared = this.square(arrEvens);
+		let sumArrEvensSquared = this.sum(arrEvensSquared);
+		return sumArrEvensSquared;
+	}
 }
 
 module.exports = arrayTasks
