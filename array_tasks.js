@@ -10,19 +10,15 @@ var arrayTasks = {
 	},
 
 	square: function (arr) {
-		let newArray = [];
-		for (let item of arr) {
-			newArray.push(item * item)
-		}
-		return newArray;
+		let newArray = arr.map(x => x * x)
+
+		return newArray
 	},
 
 	sum: function (arr) {
-		let total = 0;
-		for (let item of arr) {
-			total += item;
-		}
-		return total;
+		const reducer = (accumulator, currentValue) => accumulator + currentValue;
+		const sum = arr.reduce(reducer);
+		return sum;
 	},
 
 	findDuplicates: function (arr) {
@@ -48,9 +44,17 @@ var arrayTasks = {
 		return arr;
 	},
 
-	// findIndexesOf: function (arr, itemToFind) {
-
-	// },
+	findIndexesOf: function (arr, itemToFind) {
+		if (arr.includes(itemToFind)) {
+			let newArray = []
+			for (let item of arr) {
+				if (item === itemToFind) {
+					newArray.push(arr.indexOf(item));
+				}
+			}
+		}
+		return newArray;
+	},
 
 	// sumOfAllEvenNumbersSquared: function (arr) {
 
