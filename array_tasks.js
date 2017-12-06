@@ -46,14 +46,17 @@ var arrayTasks = {
 
 	findIndexesOf: function (arr, itemToFind) {
 		if (arr.includes(itemToFind)) {
-			let newArray = []
+			let index = 0
+			let newArray = [];
 			for (let item of arr) {
 				if (item === itemToFind) {
-					newArray.push(arr.indexOf(item));
+					newArray.push(index);
 				}
+				index++
 			}
+			console.log(newArray);
+			return newArray;
 		}
-		return newArray;
 	},
 
 	// sumOfAllEvenNumbersSquared: function (arr) {
