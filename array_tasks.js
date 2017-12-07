@@ -10,9 +10,8 @@ var arrayTasks = {
 	},
 
 	square: function (arr) {
-		let newArray = arr.map(x => x * x)
-
-		return newArray
+		let newArray = arr.map(x => x * x);
+		return newArray;
 	},
 
 	sum: function (arr) {
@@ -24,36 +23,36 @@ var arrayTasks = {
 	findDuplicates: function (arr) {
 		let newArray = [];
 		let duplicatesArray = [];
-		for (let item of arr) {
+		arr.forEach(function (item) {
 			if (newArray.includes(item) && !duplicatesArray.includes(item)) {
 				duplicatesArray.push(item);
 			}
-		newArray.push(item);
-		}
+			newArray.push(item);
+		});
 		return duplicatesArray;
 	},
 
 	removeAndClone: function (arr, valueToRemove) {
 		if (arr.includes(valueToRemove)) {
-			for (let item of arr) {
+			arr.forEach(function (item) {
 				if (item === valueToRemove) {
-					arr.splice(arr.indexOf(item), 1)
+					arr.splice(arr.indexOf(item), 1);
 				}
-			}
+			});
 		}
 		return arr;
 	},
 
 	findIndexesOf: function (arr, itemToFind) {
 		if (arr.includes(itemToFind)) {
-			let index = 0
+			let index = 0;
 			let newArray = [];
-			for (let item of arr) {
+			arr.forEach(function (item) {
 				if (item === itemToFind) {
 					newArray.push(index);
 				}
-				index++
-			}
+				index++;
+			});
 			console.log(newArray);
 			return newArray;
 		}
@@ -65,6 +64,6 @@ var arrayTasks = {
 		let sumArrEvensSquared = this.sum(arrEvensSquared);
 		return sumArrEvensSquared;
 	}
-}
+};
 
-module.exports = arrayTasks
+module.exports = arrayTasks;
